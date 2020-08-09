@@ -1,23 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './rwg.svg';
+import bgVideo from './media/appBG.mp4'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+        <video playsInline autoPlay muted loop id="bgVid">
+            <source src={bgVideo} type="video/mp4"/>
+        </video>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Soon
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
