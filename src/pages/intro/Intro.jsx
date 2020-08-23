@@ -33,8 +33,8 @@ class Intro extends Component {
                 <header className="App-header">
                     <img src={logo} id="logo" alt="Red Wine Gaming"/>
                     <div id="text">
-                    <Typography variant="h3">We aren't quite ready yet</Typography>
-                    <Typography variant="h5">If you have a password you can enter below</Typography>
+                    <Typography variant="h4">We aren't quite ready yet</Typography>
+                    <Typography variant="h6">If you have a password you can enter below</Typography>
                     </div>
                     <div id="input">
                         <TextField error={error} id="inputPassword" label="Enter Password" type="password" size="small" />

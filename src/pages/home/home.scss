@@ -5,26 +5,29 @@
   height: 100vh;
 
   .header-unit {
+    position: relative;
     text-align: center;
-    height: 400px;
+    width: 100%;
+    height: fit-content;
     border: 10px solid #000;
     border-right:none;
     border-left: none;
-    position: relative;
     padding: 20px;
+    overflow: hidden;
   }
   #video-container {
     position: absolute;
   }
   #video-container {
-    top:0%;
-    left:0%;
+    top:0;
+    left:0;
     height:100%;
     width: 100%;
     overflow: hidden;
   }
   video {
     position:absolute;
+    object-fit: fill;
     left:0;
     z-index:-1;
   }
@@ -34,12 +37,11 @@
 
   #logo{
     position: relative;
-    top: 50px;
-    width: 500px;
+    max-width: 500px;
   }
 
   #bannerText{
-    top: 100px;
+    padding-top: 20px;
     position: relative;
     color: white;
   }

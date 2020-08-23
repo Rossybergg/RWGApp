@@ -4,6 +4,7 @@ import logo from '../../assets/images/logo.svg'
 import './home.scss';
 import {Typography} from "@material-ui/core";
 import IntroductionText from "../../components/introductionText/IntroductionText";
+import MenuBar from "../../components/menuBar/MenuBar";
 
 
 class Home extends Component {
@@ -22,10 +23,11 @@ class Home extends Component {
     render() {
         return (
             <div id="home">
+                <MenuBar/>
                 <div className="header-unit">
                     <img src={logo} alt="Red Wine Gaming" id="logo"/>
                     <div id="video-container">
-                        <video autoPlay loop className="fillWidth">
+                        <video playsInline autoPlay loop className="fillWidth">
                             <source src={bgVideo}/>
                             Your browser does not support the video tag. We suggest you upgrade your
                             browser.
