@@ -1,20 +1,20 @@
 import React from 'react';
-import logo from './rwg.svg';
-import bgVideo from './media/appBG.mp4'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Intro from './pages/intro/Intro'
+import Home from './pages/home/Home'
+import MenuBar from "./components/menuBar/MenuBar";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <video playsInline autoPlay muted loop id="bgVid">
-            <source src={bgVideo} type="video/mp4"/>
-        </video>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Soon
-        </p>
-      </header>
+        { localStorage.getItem('loggedIn') ? <MenuBar/> : null}
+        <BrowserRouter>
+        <Switch>
+            <Route exact path ="/" component={Intro} />
+            <Route exact path ="/home" component={Home} />
+        </Switch>
+        </BrowserRouter>
     </div>
   );
 }
