@@ -1,45 +1,68 @@
-import React, {Component} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import './menubar.scss';
 import AccountCircle from '@material-ui/icons/AccountCircle'
+import { UserContext } from "../../store/Store";
+import { Link } from 'react-router-dom'
+import { getUser } from "../../services/userService";
+import Notifications from "../Notifications/Notifications";
+import Avatar from "@material-ui/core/Avatar";
 
-class MenuBar extends Component {
+function MenuBar() {
+    const notifications = new Notifications();
+    const [userProfile, setUserProfile] = useContext(UserContext);
+    const [pageLoad] = useState(true)
 
-    constructor(props) {
-        super(props);
+    useEffect( () => {
+        if (!userProfile){
+            console.log(userProfile)
+            getUser().then( ({ data }) => {
+                setUserProfile(data);
+                console.log(data);
+                notifications.sendToast('success', 5000, 'Success', 'Logged In...');
+            }).catch((error) => {
+                console.log(error)
+            })
+        }
+    }, [pageLoad])
 
-        this.state = {
-            loggedIn: false
-        };
-    }
 
-    render() {
-        return (
-            <div id="menuBar">
-                <header id="nav-wrapper">
-                    <nav id="nav">
-                        <div className="nav left">
-                            <span className="gradient skew"><h1 className="logo un-skew"><a
-                                href="/">[RWG]</a></h1></span>
-                            <button id="menu" className="btn-nav"><span
-                                className="fas fa-bars"></span></button>
-                        </div>
+    // TODO: move to service and use real URL
+    const login = () => window.location.href = 'https://redwinegamingbot.herokuapp.com/api/auth/discord';
+
+    return (
+        <div id="menuBar">
+            <header id="nav-wrapper">
+                <nav id="nav">
+                    <div className="nav left">
+                            <span className="gradient skew"><h1 className="logo un-skew"><Link
+                                to="/">[RWG]</Link></h1></span>
+                        <button id="menu" className="btn-nav"><span
+                            className="fas fa-bars"></span></button>
+                    </div>
+                    { userProfile ?
                         <div className="nav right">
-                            <a href="#home" className="nav-link active"><span
-                                className="nav-link-span"><span className="u-nav">Home</span></span></a>
-                            <a href="#about" className="nav-link"><span
+                            <Link to="/" className="nav-link active"><span
+                                className="nav-link-span"><span className="u-nav">Home</span></span></Link>
+                            <Link to='/events' className="nav-link"><span
                                 className="nav-link-span"><span
-                                className="u-nav">About</span></span></a>
-                            <a href="#work" className="nav-link"><span
-                                className="nav-link-span"><span className="u-nav">Members</span></span></a>
-                            <a href="#contact" className="nav-link"><span className="nav-link-span"><span
-                                className="u-nav">Login  </span><AccountCircle id="accountCircle" fontSize="default"/></span></a>
+                                className="u-nav">Events</span></span></Link>
+                            <Link to="/" className="nav-link"><span
+                                className="nav-link-span"><span className="u-nav">Members</span></span></Link>
+                            <Link to="/" className="nav-link profile"><span className="nav-link-span"><span
+                                className="u-nav">{userProfile.userName} <Avatar id="accountCircle" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/> </span></span></Link>
                         </div>
-                    </nav>
-                </header>
-            </div>
-        );
-    }
+                        :
+                        <div className="nav right">
+                            <a href="#"  onClick={login} className="nav-link"><span className="nav-link-span"><span
+                                className="u-nav">Login  </span><AccountCircle id="defaultAccountCircle"
+                                                                               fontSize="default"/></span></a>
+                        </div>
+                    }
 
+                </nav>
+            </header>
+        </div>
+    );
 }
 
 export default MenuBar;

@@ -1,20 +1,36 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Intro from './pages/intro/Intro'
+import {Router, Route} from 'react-router'
+import {useHistory} from 'react-router-dom'
 import Home from './pages/home/Home'
-import './App.css';
+import Events from "./pages/events/Events";
+import Footer from "./components/Footer/Footer";
+import './App.scss';
+import MenuBar from './components/menuBar/MenuBar';
+import Store from './store/Store';
+import {MuiPickersUtilsProvider} from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 function App() {
-  return (
-    <div className="App">
-        <BrowserRouter>
-        <Switch>
-            <Route exact path ="/" component={Intro} />
-            <Route exact path ="/home" component={Home} />
-        </Switch>
-        </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="App">
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <Store>
+                    <div>
+                        <MenuBar/>
+                    </div>
+                    <div className="Page">
+                        <Router history={useHistory()}>
+                            <Route exact path="/" component={Home}/>
+                            <Route path="/events" component={Events}/>
+                        </Router>
+                    </div>
+                    <div>
+                        <Footer/>
+                    </div>
+                </Store>
+            </MuiPickersUtilsProvider>
+        </div>
+    );
 }
 
 export default App;

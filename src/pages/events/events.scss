@@ -1,0 +1,32 @@
+.Events{
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+overflow-y: auto;
+  .Paper{
+    padding: 0 30px ;
+    width: fit-content;
+    height: fit-content;
+    background: #2C2F33;
+  }
+  h1{
+    color: white;
+    font-family: Roboto;
+  }
+  .Input{
+    width: 600px;
+    margin: 20px 50px;
+  }
+  #buttonContainer{
+    padding-top: 20px;
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 55px;
+  }
+  Button{
+    position: relative;
+    float: right;
+  }
+}
