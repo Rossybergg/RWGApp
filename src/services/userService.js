@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getUser = () => {
-    return axios.get('https://redwinegamingbot.herokuapp.com/api/auth',
+    return axios.get('http://service.redwinegaming.com/api/auth',
         {withCredentials: true}
     );
 }

@@ -26,8 +26,7 @@ function MenuBar() {
     }, [pageLoad])
 
 
-    // TODO: move to service and use real URL
-    const login = () => window.location.href = 'https://redwinegamingbot.herokuapp.com/api/auth/discord';
+    const login = () => window.location.href = 'http://service.redwinegaming.com/api/auth/discord';
 
     return (
         <div id="menuBar">
