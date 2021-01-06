@@ -26,18 +26,18 @@ function Events(props) {
         <div className="Events">
 
             {
-                userProfile && userProfile.staff ?
+                !userProfile ?
                     <Paper className="Paper">
                         <h1>Create New Event</h1>
                         <div>
-                            <TextField className="Input"
-                                       variant="outlined"
+                            <TextField className="Input Text"
+                                       variant="filled"
                                        label="Event Title"
                                        onChange={(event) => {setTitle(event.target.value)}}
                             />
                         </div>
                         <div>
-                            <FormControl className="Input" variant="outlined">
+                            <FormControl className="Input Text" variant="filled">
                                 <InputLabel>Event Type</InputLabel>
                                 <Select
                                     label="Event Type"
@@ -53,7 +53,7 @@ function Events(props) {
                         </div>
                         { event === 'GAME' ?
                             <div>
-                                <FormControl className="Input" variant="outlined">
+                                <FormControl className="Input Text" variant="filled">
                                     <InputLabel>Game</InputLabel>
                                     <Select
                                         label="Game"
@@ -70,18 +70,18 @@ function Events(props) {
                         }
                         <div>
                             <TextField
-                                className="Input"
+                                className="Input Text"
                                 id="outlined-multiline-static"
                                 label="Event Description"
                                 multiline
                                 rows={4}
                                 value={description}
                                 onChange={(event) => {setDescription(event.target.value)}}
-                                variant="outlined"
+                                variant="filled"
                             />
                         </div>
                         <div>
-                            <FormControl className="Input" variant="outlined">
+                            <FormControl className="Input Text" variant="filled">
                                 <InputLabel>Thumbnail Image</InputLabel>
                                 <Select
                                     label="Thumbnail Image"
@@ -98,7 +98,7 @@ function Events(props) {
                         { thumbnail === 'CUSTOM' ?
                             <div>
                                 <TextField className="Input"
-                                           variant="outlined"
+                                           variant="filled"
                                            label="Custom Thumbnail URL"
                                            onChange={(event) => {setThumbnailURL(event.target.value)}}
                                 />
@@ -107,7 +107,7 @@ function Events(props) {
                         }
                         <div>
                             <KeyboardDatePicker
-                                variant="outlined"
+                                variant="filled"
                                 className="Input"
                                 margin="normal"
                                 id="date-picker-dialog"

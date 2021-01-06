@@ -1,22 +1,29 @@
 .Events{
+  position: relative;
   padding-top: 50px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-overflow-y: auto;
   .Paper{
+    position: relative;
     padding: 0 30px ;
-    width: fit-content;
+    width: 100%;
+    max-width: 600px;
     height: fit-content;
-    background: #2C2F33;
+    background: #1e1e1e;
   }
   h1{
     color: white;
     font-family: Roboto;
   }
   .Input{
-    width: 600px;
-    margin: 20px 50px;
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .Text{
+    background-color: #191919;
   }
   #buttonContainer{
     padding-top: 20px;
