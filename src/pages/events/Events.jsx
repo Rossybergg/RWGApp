@@ -26,7 +26,7 @@ function Events(props) {
         <div className="Events">
 
             {
-                !userProfile ?
+                userProfile && userProfile.staff ?
                     <Paper className="Paper">
                         <h1>Create New Event</h1>
                         <div>
