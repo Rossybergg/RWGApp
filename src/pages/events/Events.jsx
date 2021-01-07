@@ -10,7 +10,7 @@ import TextField from "@material-ui/core/TextField";
 import {KeyboardDatePicker, KeyboardTimePicker} from "@material-ui/pickers";
 import Button from "@material-ui/core/Button";
 import SaveIcon from '@material-ui/icons/Save';
-import {Redirect} from "react-router";
+import NotAuthorised from "../notAuthorised/NotAuthorised";
 
 
 function Events(props) {
@@ -24,11 +24,6 @@ function Events(props) {
     const [thumbnailUrl, setThumbnailURL] = useState('')
     const [description, setDescription] = useState('')
     const [pageLoad] = useState(true)
-
-    useEffect(() => {
-        console.log(userProfile);
-        console.log(userProfile.staff);
-    }, [pageLoad])
 
     return (
         <div className="Events">
@@ -151,10 +146,8 @@ function Events(props) {
                             </Button>
                         </div>
                     </Paper>
-                :
-                    <Redirect to="/401"/>
+                : <NotAuthorised/>
             }
-
         </div>
     )
 }
