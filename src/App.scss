@@ -11,6 +11,7 @@
         height: 65%;
         width: 100%;
         overflow: hidden;
+        border-bottom: 5px black solid;
     }
 
     .Overlay{
@@ -18,9 +19,10 @@
         height: 400%;
         width: 400%;
         mix-blend-mode: overlay;
+        filter: saturate(200%);
         opacity: 0.6;
         background: linear-gradient(-45deg,  #2d0061, #620000, #8f4fc1, #971c28);
-        animation: gradient 20s infinite;
+        animation: gradient 15s infinite;
     }
 
     @keyframes gradient {
@@ -36,16 +38,6 @@
             top: 0;
             left: 0;
         }
-    }
-
-    .Mask{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(0deg, rgba(25,25,25,1) 17%, rgba(25,25,25,0.6890951276102089) 32%, rgba(253,187,45,0) 48%);
-
     }
 
 
