@@ -13,7 +13,7 @@ function NotFound() {
                 </div>
                 <div id="textContainer">
                     <Typography variant="h3">
-                        Not Found...
+                        Not Found
                     </Typography>
                     <Typography variant="subtitle1">
                         Woah... What were you looking for? Whatever it was you won't find it here!
