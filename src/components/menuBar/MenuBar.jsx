@@ -14,13 +14,12 @@ function MenuBar() {
 
     useEffect( () => {
         if (!userProfile){
-            console.log(userProfile)
             getUser().then( ({ data }) => {
                 setUserProfile(data);
-                console.log(data);
                 notifications.sendToast('success', 5000, 'Success', 'Logged In...');
             }).catch((error) => {
                 console.log(error)
+                notifications.sendToast('error', 7000, 'Error', 'Sorry Can\'t log you in at the moment')
             })
         }
     }, [pageLoad])

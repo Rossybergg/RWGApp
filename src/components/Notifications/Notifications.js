@@ -4,20 +4,20 @@ export default class Notifications {
 
     sendToast(type, timer, title, text) {
 
-        let background = '#333333';
+        let iconColour = '#FFFFFF'
 
         switch (type) {
             case 'success':
-                background = '#4caf50'
+                iconColour = '#4caf50'
                 break;
             case 'error':
-                background = '#f44336'
+                iconColour = '#f44336'
                 break;
             case 'warning':
-                background = '#ff9800'
+                iconColour = '#ff9800'
                 break;
             case 'info':
-                background = '#2196f3'
+                iconColour = '#2196f3'
                 break;
             default:
                 break;
@@ -33,8 +33,11 @@ export default class Notifications {
             timerProgressBar: true,
             position: 'bottom-end',
             showConfirmButton: false,
-            background: background,
-            iconColor: 'white'
+            background: '#1e1e1e',
+            iconColor: iconColour,
+            customClass: {
+                content: 'colour: #ffffff'
+            }
         })
     }
 

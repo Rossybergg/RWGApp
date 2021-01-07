@@ -1,11 +1,14 @@
 import React, {useEffect, useState, useContext} from 'react';
 import miniLogo from '../../assets/images/r.png'
 import './MenuBarNew.scss'
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import { Link } from 'react-router-dom'
 import { UserContext } from '../../store/Store';
-import Avatar from "@material-ui/core/Avatar";
-import {getUser} from "../../services/userService";
+import Avatar from '@material-ui/core/Avatar';
+import {getUser} from '../../services/userService';
+import {serviceURL} from '../../constants/serviceURLS';
+import Notifications from '../Notifications/Notifications';
+
 
 function MenubarNew() {
 
@@ -15,15 +18,15 @@ function MenubarNew() {
     let navbarToggle;
     let navbarMenu;
     let navbarLinksContainer;
+    const notifications = new Notifications();
 
     useEffect( () => {
         if (!userProfile){
-            console.log(userProfile)
             getUser().then( ({ data }) => {
                 setUserProfile(data);
-                console.log(data);
             }).catch((error) => {
                 console.log(error)
+                notifications.sendToast('error', 7000, 'Error', 'Sorry Can\'t log you in at the moment')
             })
         }
     }, [pageLoad])
@@ -81,7 +84,7 @@ function MenubarNew() {
                             <li className="navbar-item"><Link className="navbar-link" to="/members">Members</Link></li>
                             {
                                 !userProfile ?
-                                    <li className="navbar-item"><a className="navbar-link" href="https://service.redwinegaming.com/api/auth/discord" >Login<AccountCircle id="defaultAccountCircle" fontSize="default"/></a></li>
+                                    <li className="navbar-item"><a className="navbar-link" href={`${serviceURL}/api/auth/discord`} >Login<AccountCircle id="defaultAccountCircle" fontSize="default"/></a></li>
                                     :
                                     <li className="navbar-item"><Link className="navbar-link" onClick={login}>{userProfile.userName}<Avatar id="accountCircle" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/></Link></li>
                             }

@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { serviceURL } from "../constants/serviceURLS";
 
 export const getUser = () => {
-    return axios.get('https://service.redwinegaming.com/api/auth',
+    return axios.get(`${serviceURL}/api/auth`,
         {withCredentials: true}
     );
 }
