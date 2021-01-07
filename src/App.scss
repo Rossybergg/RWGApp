@@ -11,7 +11,6 @@
         height: 65%;
         width: 100%;
         overflow: hidden;
-        border-bottom: 5px black solid;
     }
 
     .Overlay{
@@ -38,6 +37,15 @@
             top: 0;
             left: 0;
         }
+    }
+
+    .Mask{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: -webkit-linear-gradient(90deg, rgba(25,25,25,1) 17%, rgba(25,25,25,0.7) 32%, rgba(253,187,45,0) 48%);
     }
 
 
