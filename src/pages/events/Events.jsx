@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {UserContext} from "../../store/Store";
 import './events.scss'
 import {Paper} from "@material-ui/core";
@@ -23,6 +23,13 @@ function Events(props) {
     const [thumbnail, setThumbnail] = useState('')
     const [thumbnailUrl, setThumbnailURL] = useState('')
     const [description, setDescription] = useState('')
+    const [pageLoad] = useState(true)
+
+    useEffect(() => {
+        console.log(userProfile);
+        console.log(userProfile.staff);
+    }, [pageLoad])
+
     return (
         <div className="Events">
 
