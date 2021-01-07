@@ -59,7 +59,7 @@ function MenubarNew() {
         navbarToggle.setAttribute("aria-label", "Open navigation menu.");
     }
 
-    const login = () => window.location.href = 'http://service.redwinegaming.com/api/auth/discord';
+    const login = () => window.location.href = 'https://service.redwinegaming.com/api/auth/discord';
 
 
     return(

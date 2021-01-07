@@ -1,4 +1,4 @@
-.Home{
+.NotAuthorised {
   position: relative;
   padding-top: 20px;
   width: 100%;
@@ -6,18 +6,15 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  color: white;
-
   .Paper{
     position: relative;
-    padding: 50px 20px 30px 20px;
+    padding: 30px 30px ;
     width: 100%;
     max-width: 600px;
     height: fit-content;
     background: #1e1e1e;
   }
-
-  #logoContainer {
+  #iconContainer {
     position: relative;
     display: flex;
     width: 100%;
@@ -25,20 +22,18 @@
     justify-content: center;
     align-content: center;
   }
-
-  #logo{
-    position: relative;
+  #blockIcon{
+    width: 70%;
     height: auto;
-    width: 100%;
+    color: white;
   }
-
-  .BannerContainer{
-    margin: 20px 0;
+  #textContainer{
     position: relative;
-    display: flex;
+    text-align: center;
     width: 100%;
     height: fit-content;
-    justify-content: center;
-    align-content: center;
+    > * {
+      margin-bottom: 20px;
+    }
   }
 }

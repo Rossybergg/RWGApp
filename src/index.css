@@ -1,4 +1,10 @@
+#root{
+    position: relative;
+    min-height: 100vh;
+}
+
 body {
+    position: relative;
     margin: 0;
     background-color: #191919;
 }
