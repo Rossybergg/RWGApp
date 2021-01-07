@@ -81,7 +81,7 @@ function MenubarNew() {
                             <li className="navbar-item"><Link className="navbar-link" to="/members">Members</Link></li>
                             {
                                 !userProfile ?
-                                    <li className="navbar-item"><a className="navbar-link" href="http://service.redwinegaming.com/api/auth/discord" >Login<AccountCircle id="defaultAccountCircle" fontSize="default"/></a></li>
+                                    <li className="navbar-item"><a className="navbar-link" href="https://service.redwinegaming.com/api/auth/discord" >Login<AccountCircle id="defaultAccountCircle" fontSize="default"/></a></li>
                                     :
                                     <li className="navbar-item"><Link className="navbar-link" onClick={login}>{userProfile.userName}<Avatar id="accountCircle" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/></Link></li>
                             }
