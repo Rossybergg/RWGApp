@@ -60,11 +60,6 @@ function Events(props) {
             foundError = true
         }
 
-        if (hoursDiff <= 3) {
-            setDateError(true)
-            foundError = true
-        }
-
         if (foundError) {
             return;
         }

@@ -26,7 +26,6 @@ function MenubarNew() {
                 setUserProfile(data);
             }).catch((error) => {
                 console.log(error)
-                notifications.sendToast('error', 7000, 'Error', 'Sorry Can\'t log you in at the moment')
             })
         }
     }, [pageLoad])
