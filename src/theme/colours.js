@@ -3,7 +3,7 @@ export const colours = {
     RED_MAIN: '#971c28',
     RED_DARK: '#620000',
     PURPLE_LIGHT: '#8f4fc1',
-    PURPLE_MAIN: '#5e2190',
+    PURPLE_MAIN: '#AA00FF',
     PURPLE_DARK: '#2d0061',
     WHITE: '#ffffff',
     BLACK: '#000000',
