@@ -11,6 +11,7 @@ import DateFnsUtils from '@date-io/date-fns';
 import MenubarNew from "./components/menuBar/MenuBarNew";
 import NotAuthorised from "./pages/notAuthorised/NotAuthorised";
 import NotFound from "./pages/notFound/NotFound";
+import NewEvent from "./pages/events/NewEvent";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                             <Switch>
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/events" component={Events}/>
+                                <Route path="/newevent" component={NewEvent}/>
                                 <Route path="/401" component={NotAuthorised}/>
                                 <Route component={NotFound}/>
                             </Switch>

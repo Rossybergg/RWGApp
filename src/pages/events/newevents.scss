@@ -1,4 +1,4 @@
-.Events{
+.NewEvents{
   position: relative;
   padding-top: 20px;
   width: 100%;
@@ -6,21 +6,13 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  .Calendar{
-    position: relative;
-    min-height: 600px;
-    margin-top: 10px;
-    width: 100%;
-    font-family: Roboto;
-  }
   .Paper{
     position: relative;
-    padding: 0 30px 50px 30px; ;
+    padding: 0 30px ;
     width: 100%;
-    max-width: 1000px;
+    max-width: 600px;
     height: fit-content;
     background: #1e1e1e;
-    overflow: hidden;
   }
   h1{
     color: white;
@@ -37,6 +29,7 @@
   #buttonContainer{
     padding-top: 20px;
     position: relative;
+    margin-bottom: 30px;
     width: 100%;
     height: 55px;
   }

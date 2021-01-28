@@ -4,9 +4,11 @@ import {Typography} from "@material-ui/core";
 
 function Footer() {
 
+    const year = new Date().getFullYear()
+
     return(
         <div className="Footer">
-            <Typography id="bannerText" variant="body1">© 2020 Red Wine Gaming</Typography>
+            <Typography id="bannerText" variant="body1">{`© ${year} Red Wine Gaming`}</Typography>
         </div>
     )
 

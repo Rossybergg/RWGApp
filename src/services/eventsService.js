@@ -9,3 +9,7 @@ export const publishEvent = (data, user) => {
         }
     });
 }
+
+export const getEvents = () => {
+    return axios.get(`${serviceURL}/api/events`);
+}
