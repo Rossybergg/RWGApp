@@ -89,6 +89,7 @@ function NewEvent(props) {
         publishEvent(data, userProfile).then((result) => {
             notifications.sendToast('success',5000, 'Success', `Event ${title} has been successfully posted`)
             resetForm()
+            console.log(result);
             history.push('/events')
         }).catch((err) => {
             notifications.sendToast('error', 5000, 'Error', 'Yikes... There was an Error please try again')
@@ -170,7 +171,7 @@ function NewEvent(props) {
                                 id="outlined-multiline-static"
                                 label="Event Description"
                                 multiline
-                                rows={4}
+                                rows={10}
                                 error={descriptionError}
                                 value={description}
                                 onChange={(event) => {

@@ -1,0 +1,98 @@
+.EventDetails{
+  position: relative;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  h1{
+    z-index: 100;
+  }
+  .Avatar{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 3px solid white;
+    margin: 0px;
+  }
+  .User{
+    height: 70px;
+    width: 70px;
+    margin: 0 2px;
+  }
+  .Paper{
+    position: relative;
+    padding: 0 30px 10px 30px; ;
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    background: #1e1e1e;
+    overflow: hidden;
+  }
+  h4{
+    margin-top: 150px;
+    position: relative;
+    color: white;
+    font-family: Roboto;
+  }
+  .Text{
+    background-color: #191919;
+  }
+  #buttonContainer{
+    padding-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 55px;
+  }
+  Button{
+    position: relative;
+    float: right;
+  }
+  .Input{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .CenterContainer{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .AvatarContainer{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+  }
+  .EventImage{
+    width: 100%;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .EventMask{
+    background: linear-gradient(0deg, #1e1e1e 25%, rgba(0,0,0,0) 100%);
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+#swal2-content {
+  color: white !important;
+  font-family: Roboto, serif;
+}
+
+#swal2-title {
+  color: white !important;
+  font-family: Roboto, serif;
+}

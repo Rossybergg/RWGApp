@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {Paper} from '@material-ui/core';
+import {Paper, Typography} from '@material-ui/core';
 import {Calendar, Views, momentLocalizer} from 'react-big-calendar';
 import { useHistory } from 'react-router-dom'
 import moment from 'moment';
@@ -17,7 +17,6 @@ const Events = (props) => {
     useEffect(() => {
         document.title = "[RWG] Red Wine Gaming - Events"
         getEvents().then((result) => {
-            console.log(result.data);
             setEvents(result.data)
         })
     }, [])
@@ -30,19 +29,29 @@ const Events = (props) => {
         <div className="Events">
             <Paper className="Paper">
                 <h1>Upcoming Events</h1>
-                <div id="buttonContainer">
-                    <Button variant="contained" onClick={() => history.push('/newevent')} color="primary" startIcon={<Add/>}>
-                        Create New Event
-                    </Button>
-                </div>
+                <Typography variant="body2">Below you'll find all the upcoming events available for members, click an event for more info.</Typography>
+                {
+                    userProfile && userProfile.staff
+                        ?
+                        <div id="buttonContainer">
+                            <Button variant="contained" onClick={() => history.push('/newevent')} color="primary" startIcon={<Add/>}>
+                                Create New Event
+                            </Button>
+                        </div>
+                        :
+                        null
+                }
                 <Calendar
                     className="Calendar"
                     selectable
                     events={events}
+                    views={{
+                        month: true,
+                    }}
                     localizer={localizer}
                     defaultView={Views.MONTH}
                     defaultDate={new Date()}
-                    onSelectEvent={event => console.log(event.eventID)}
+                    onSelectEvent={event => history.push(`events/${event.eventID}`)}
                 />
             </Paper>
         </div>

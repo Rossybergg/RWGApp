@@ -6,3 +6,9 @@ export const getUser = () => {
         {withCredentials: true}
     );
 }
+
+export const getAvatars = (userIds) => {
+    return axios.post(`${serviceURL}/api/users/avatar`, {
+        users: userIds
+    })
+}

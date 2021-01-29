@@ -108,7 +108,8 @@ button.rbc-input::-moz-focus-inner {
 .rbc-toolbar .rbc-toolbar-label {
   flex-grow: 1;
   padding: 0 10px;
-  text-align: center; }
+  font-size: 20px;
+  text-align: right; }
 .rbc-toolbar button {
   color: white;
   display: inline-block;
@@ -358,7 +359,8 @@ color: #971c28}
   flex: none; }
 
 .rbc-label {
-  padding: 0 5px; }
+  padding: 0 5px;
+}
 
 .rbc-day-slot {
   position: relative; }

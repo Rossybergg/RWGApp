@@ -13,3 +13,16 @@ export const publishEvent = (data, user) => {
 export const getEvents = () => {
     return axios.get(`${serviceURL}/api/events`);
 }
+
+export const getEvent = (eventId) => {
+    return axios.get(`${serviceURL}/api/events/${eventId}`);
+}
+
+export const signUp = (user, eventId) => {
+    return axios.post(`${serviceURL}/api/events/signup`, {
+        content: {
+            user,
+            eventId
+        }
+    });
+}

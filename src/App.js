@@ -12,6 +12,7 @@ import MenubarNew from "./components/menuBar/MenuBarNew";
 import NotAuthorised from "./pages/notAuthorised/NotAuthorised";
 import NotFound from "./pages/notFound/NotFound";
 import NewEvent from "./pages/events/NewEvent";
+import EventDetails from "./pages/events/EventDetails";
 
 function App() {
     return (
@@ -28,7 +29,8 @@ function App() {
                         <Router history={useHistory()}>
                             <Switch>
                                 <Route exact path="/" component={Home}/>
-                                <Route path="/events" component={Events}/>
+                                <Route exact path="/events" component={Events}/>
+                                <Route path="/events/:eventId" component={EventDetails}/>
                                 <Route path="/newevent" component={NewEvent}/>
                                 <Route path="/401" component={NotAuthorised}/>
                                 <Route component={NotFound}/>
