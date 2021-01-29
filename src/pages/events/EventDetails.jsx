@@ -77,6 +77,7 @@ const EventDetails = (props) => {
 
         if(!userProfile || !userProfile._id){
             notifications.sendToast('error', 6000, 'Error', `You need to be logged in to sign up`)
+            return;
         }
 
         signUp(userProfile, event.eventID)
