@@ -75,6 +75,11 @@ const EventDetails = (props) => {
     }
 
     const userSignUp = () => {
+
+        if(!userProfile || !userProfile._id){
+            notifications.sendToast('error', 6000, 'Error', `You need to be logged in to sign up`)
+        }
+
         signUp(userProfile, event.eventID)
             .then((result) => {
                 if (result.data.status === 'SUCCESS') {
@@ -180,7 +185,7 @@ const EventDetails = (props) => {
 
                             }
                             {
-                                userProfile && userProfile._id && creator
+                                 creator
                                     ?
                                     <div id="buttonContainer">
                                         <Button variant="contained" onClick={() => userSignUp()} color="primary" startIcon={<PersonAdd/>}>
