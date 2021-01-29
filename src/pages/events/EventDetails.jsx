@@ -43,7 +43,6 @@ const EventDetails = (props) => {
     }, [event])
 
     useEffect(() => {
-        console.log(addedUsers)
     }, [addedUsers])
 
     const getImage = (game) => {

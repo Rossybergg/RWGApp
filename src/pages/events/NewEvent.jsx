@@ -73,7 +73,6 @@ function NewEvent(props) {
         }
 
         submitEvent()
-        console.log(process.env.NODE_ENV)
 
     }
 
@@ -89,7 +88,6 @@ function NewEvent(props) {
         publishEvent(data, userProfile).then((result) => {
             notifications.sendToast('success',5000, 'Success', `Event ${title} has been successfully posted`)
             resetForm()
-            console.log(result);
             history.push('/events')
         }).catch((err) => {
             notifications.sendToast('error', 5000, 'Error', 'Yikes... There was an Error please try again')
