@@ -68,12 +68,11 @@
       width: fit-content;
       height: fit-content;
       overflow: hidden;
-      justify-content: center;
-
+      text-align: center;
       .Avatar{
         float: left;
         position: relative;
-        margin: 5px;
+        margin: 10px;
       }
       .User{
         height: 70px;
