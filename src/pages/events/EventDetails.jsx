@@ -149,7 +149,7 @@ const EventDetails = (props) => {
                                                     variant="body1">{`Created By: ${creator.userName}`}</Typography>
                                         <div className="CenterContainer">
                                             <Avatar alt={creator.userName}
-                                                    className="Avatar"
+                                                    className="Creator"
                                                     src={`https://cdn.discordapp.com/avatars/${event.creator}/${creator.avatar}`}/>
                                         </div>
                                     </div>
@@ -161,22 +161,28 @@ const EventDetails = (props) => {
                                     ?
                                     <div>
                                         <Typography className="CenterContainer Input"
-                                                    variant="body1">Members Taking Part:</Typography>
-                                        <div className="AvatarContainer">
-                                            {addedUsers.map((user) => {
-                                                if (user.avatar) {
-                                                    return (
-                                                        <Avatar alt={user.userName}
-                                                                className="Avatar User"
-                                                                src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}`}/>
-                                                    )
-                                                } else {
-                                                    return (
-                                                        <Avatar alt={user.userName}
-                                                                className="Avatar User">{user.userName.charAt(0)}</Avatar>
-                                                    )
-                                                }
-                                            })}
+                                                    variant="body1">{`${addedUsers.length} Members Taking Part:`}</Typography>
+                                        <div className="Center">
+                                            <div className="AvatarContainer">
+                                                {addedUsers.map((user) => {
+                                                    if (user.avatar) {
+                                                        return (
+                                                            <div className="Avatar">
+                                                                <Avatar alt={user.userName}
+                                                                        className="User"
+                                                                        src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}`}/>
+                                                            </div>
+                                                        )
+                                                    } else {
+                                                        return (
+                                                            <div className="Avatar">
+                                                                <Avatar alt={user.userName}
+                                                                        className="User">{user.userName.charAt(0)}</Avatar>
+                                                            </div>
+                                                        )
+                                                    }
+                                                })}
+                                            </div>
                                         </div>
                                     </div>
 

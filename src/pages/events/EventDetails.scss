@@ -9,18 +9,6 @@
   h1{
     z-index: 100;
   }
-  .Avatar{
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border: 3px solid white;
-    margin: 0px;
-  }
-  .User{
-    height: 70px;
-    width: 70px;
-    margin: 0 2px;
-  }
   .Paper{
     position: relative;
     padding: 0 30px 10px 30px; ;
@@ -61,14 +49,38 @@
     justify-content: center;
     align-items: center;
   }
-  .AvatarContainer{
+  .Creator{
+    height: 100px;
+    width: 100px;
+    border: 3px solid white;
+  }
+  .Center{
     position: relative;
-    display: flex;
     width: 100%;
-    height: fit-content;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: auto;
+
+    .AvatarContainer{
+      position: relative;
+      display: inline-block;
+      grid-template-columns: 20% 20%;
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+      justify-content: center;
+
+      .Avatar{
+        float: left;
+        position: relative;
+        margin: 5px;
+      }
+      .User{
+        height: 70px;
+        width: 70px;
+        border: 3px solid white;
+      }
+    }
   }
   .EventImage{
     width: 100%;
