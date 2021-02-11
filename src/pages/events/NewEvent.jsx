@@ -158,6 +158,7 @@ function NewEvent(props) {
                                         <MenuItem value={'AMONGUS'}>Among Us</MenuItem>
                                         <MenuItem value={'DESTINY2'}>Destiny 2</MenuItem>
                                         <MenuItem value={'QUIZ'}>Quiz</MenuItem>
+                                        <MenuItem value={'GOLF'}>Golf With Your Friends</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>

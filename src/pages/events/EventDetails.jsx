@@ -8,7 +8,8 @@ import {getAvatars} from "../../services/userService";
 import Avatar from "@material-ui/core/Avatar";
 import amongus from '../../assets/images/games/amongus.png'
 import destiny2 from '../../assets/images/games/destiny2.png'
-import quiztime from '../../assets/images/games/quiztime.png'
+import quiztime from '../../assets/images/games/quiztime.jpg'
+import golf from '../../assets/images/games/golf.jpg'
 import logo from '../../assets/images/logo.svg'
 import {UserContext} from "../../store/Store";
 import Button from "@material-ui/core/Button";
@@ -57,6 +58,9 @@ const EventDetails = (props) => {
                 break;
             case 'Quiz':
                 image = quiztime;
+                break;
+            case 'Golf With Your Friends':
+                image = golf;
                 break;
             default:
                 image = logo;
