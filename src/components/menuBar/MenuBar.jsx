@@ -25,6 +25,7 @@ function MenuBar() {
 
 
     const login = () => window.location.href = 'http://service.redwinegaming.com/api/auth/discord';
+    const goToProfile = () => window.location.href = `https://www.redwinegaming.com/profile/${userProfile._id}`
 
     return (
         <div id="menuBar">
@@ -46,7 +47,7 @@ function MenuBar() {
                             <Link to="/" className="nav-link"><span
                                 className="nav-link-span"><span className="u-nav">Members</span></span></Link>
                             <Link to="/" className="nav-link profile"><span className="nav-link-span"><span
-                                className="u-nav">{userProfile.userName} <Avatar id="accountCircle" variant="rounded" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/> </span></span></Link>
+                                className="u-nav">{userProfile.userName} <Avatar id="accountCircle" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/> </span></span></Link>
                         </div>
                         :
                         <div className="nav right">

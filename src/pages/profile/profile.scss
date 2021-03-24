@@ -1,0 +1,138 @@
+.Profile {
+  position: relative;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+  .Paper {
+    position: relative;
+    padding: 0 30px 10px 30px;;
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    background: #1e1e1e;
+    overflow: hidden;
+  }
+
+  .ProfileImage {
+    width: 100%;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    height: 400px;
+    filter: blur(20px);
+  }
+
+  .ProfileMask {
+    background: linear-gradient(0deg, #1e1e1e 25%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h4 {
+    position: relative;
+    color: white;
+    font-family: Roboto;
+  }
+
+  .ProfileContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ProfileAvatar {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border: solid 3px white;
+  }
+
+  .TitleContainer {
+    margin-top: 260px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .StatsContainer {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+  }
+
+  .Input {
+    position: relative;
+    margin: 20px 20px 0 0;
+    background-color: #191919;
+  }
+
+  .SubTitleContainer {
+    position: relative;
+    color: white;
+    font-family: Roboto;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .SubContainer{
+    margin-top: 30px;
+    position: relative;
+    color: white;
+    font-family: Roboto;
+    width: 100%;
+    height: 30px;
+  }
+  .CasinoContainer{
+    margin: 10px 0;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .Link {
+    color: #971c28;
+    font-family: Roboto;
+    font-size: 15px;
+  }
+
+  .ChipContainer{
+    margin: 10px 0;
+    position: relative;
+    padding: 10px 0;
+    width: 100%;
+    height: fit-content;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    border: solid #878787 1px;
+    border-radius: 5px;
+    background-color: #191919;
+    overflow: hidden;
+
+    .Chip{
+      margin: 5px 0 5px 10px;
+    }
+  }
+
+}
+

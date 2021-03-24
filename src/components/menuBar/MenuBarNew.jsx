@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { UserContext } from '../../store/Store';
 import Avatar from '@material-ui/core/Avatar';
 import {getUser} from '../../services/userService';
-import {serviceURL} from '../../constants/serviceURLS';
+import {serviceURL, appURL} from '../../constants/serviceURLS';
 import Notifications from '../Notifications/Notifications';
 
 
@@ -61,9 +61,6 @@ function MenubarNew() {
         navbarToggle.setAttribute("aria-label", "Open navigation menu.");
     }
 
-    const login = () => window.location.href = 'https://service.redwinegaming.com/api/auth/discord';
-
-
     return(
         <div className="MenuBar">
             <header id="navbar">
@@ -85,7 +82,7 @@ function MenubarNew() {
                                 !userProfile ?
                                     <li className="navbar-item"><a className="navbar-link" href={`${serviceURL}/api/auth/discord`} >Login<AccountCircle id="defaultAccountCircle" fontSize="default"/></a></li>
                                     :
-                                    <li className="navbar-item"><Link className="navbar-link" onClick={login}>{userProfile.userName}<Avatar id="accountCircle" variant="rounded" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/></Link></li>
+                                    <li className="navbar-item"><Link className="navbar-link" to={`/profile/${userProfile._id}`}>{userProfile.userName}<Avatar id="accountCircle" alt={userProfile.userName} src={`https://cdn.discordapp.com/avatars/${userProfile._id}/${userProfile.avatar}`}/></Link></li>
                             }
                         </ul>
                     </div>

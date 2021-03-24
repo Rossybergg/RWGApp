@@ -13,6 +13,7 @@ import NotAuthorised from "./pages/notAuthorised/NotAuthorised";
 import NotFound from "./pages/notFound/NotFound";
 import NewEvent from "./pages/events/NewEvent";
 import EventDetails from "./pages/events/EventDetails";
+import Profile from "./pages/profile/Profile";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                                 <Route exact path="/" component={Home}/>
                                 <Route exact path="/events" component={Events}/>
                                 <Route path="/events/:eventId" component={EventDetails}/>
+                                <Route path="/profile/:userId" component={Profile}/>
                                 <Route path="/newevent" component={NewEvent}/>
                                 <Route path="/401" component={NotAuthorised}/>
                                 <Route component={NotFound}/>
