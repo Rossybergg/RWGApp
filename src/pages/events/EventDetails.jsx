@@ -158,6 +158,7 @@ const EventDetails = (props) => {
                                         <div className="CenterContainer">
                                             <Avatar alt={creator.userName}
                                                     className="Creator"
+                                                    onClick={() => {window.location.href = `https://app.redwinegaming.com/profile/${event.creator}`}}
                                                     src={`https://cdn.discordapp.com/avatars/${event.creator}/${creator.avatar}`}/>
                                         </div>
                                     </div>
@@ -178,13 +179,16 @@ const EventDetails = (props) => {
                                                             <div className="Avatar">
                                                                 <Avatar alt={user.userName}
                                                                         className="User"
-                                                                        src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}`}/>
+                                                                        src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}`}
+                                                                        onClick={() => {window.location.href = `https://app.redwinegaming.com/profile/${user.id}`}}
+                                                                />
                                                             </div>
                                                         )
                                                     } else {
                                                         return (
                                                             <div className="Avatar">
                                                                 <Avatar alt={user.userName}
+                                                                        onClick={() => {window.location.href = `https://app.redwinegaming.com/profile/${user.id}`}}
                                                                         className="User">{user.userName.charAt(0)}</Avatar>
                                                             </div>
                                                         )
