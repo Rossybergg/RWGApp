@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {UserContext} from "../../store/Store";
 import './newevents.scss'
 import {Paper} from "@material-ui/core";
@@ -159,6 +159,7 @@ function NewEvent(props) {
                                         <MenuItem value={'DESTINY2'}>Destiny 2</MenuItem>
                                         <MenuItem value={'QUIZ'}>Quiz</MenuItem>
                                         <MenuItem value={'GOLF'}>Golf With Your Friends</MenuItem>
+                                        <MenuItem value={'TABLETOP'}>Tabletop Simulator</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>

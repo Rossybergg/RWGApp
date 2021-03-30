@@ -11,6 +11,7 @@ import destiny2 from '../../assets/images/games/destiny2.png'
 import quiztime from '../../assets/images/games/quiztime.jpg'
 import golf from '../../assets/images/games/golf.jpg'
 import logo from '../../assets/images/logo.svg'
+import tabletop from '../../assets/images/games/tabletop.jpg'
 import {UserContext} from "../../store/Store";
 import Button from "@material-ui/core/Button";
 import PersonAdd from "@material-ui/icons/PersonAdd";
@@ -61,6 +62,9 @@ const EventDetails = (props) => {
                 break;
             case 'Golf With Your Friends':
                 image = golf;
+                break;
+            case 'Tabletop Simulator':
+                image = tabletop;
                 break;
             default:
                 image = logo;
