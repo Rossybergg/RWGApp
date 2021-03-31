@@ -17,7 +17,7 @@ import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import {getUserData, changeCasinoStatus} from '../../services/userService';
 import {lastSeen, formatVoiceTime, getKD} from './timeTransformer';
-import { UserContext } from '../../store/Store';
+import {UserContext} from '../../store/Store';
 import Notifications from '../../components/Notifications/Notifications';
 
 const notifications = new Notifications();
@@ -119,7 +119,6 @@ function Profile(props) {
                             <div>
                                 <img className="ProfileImage" alt={''}
                                      src={`https://cdn.discordapp.com/avatars/${profileData._id}/${profileData.avatar}`}/>
-                                <div className="ProfileMask"/>
                             </div>
                             <div className="ProfileContainer">
                                 <Avatar className="ProfileAvatar" alt={''}
@@ -135,7 +134,7 @@ function Profile(props) {
                             </div>
                             <div className="SubTitleContainer">
                                 <Typography variant="subtitle1" gutterBottom>
-                                    Last Seen: {lastSeen(profileData.voiceStartTime)}
+                                    Last Seen: {lastSeen(profileData.voiceStartTime, profileData.voiceEndTime)}
                                 </Typography>
                             </div>
                             <div className="SubContainer">
@@ -147,26 +146,31 @@ function Profile(props) {
                                         userProfile ?
                                             <div>
                                                 {userProfile._id === profileData._id ?
-                                                <div>
-                                                    <FormGroup>
-                                                        <FormControlLabel
-                                                            control={<Switch checked={casinoChecked}
-                                                                             onChange={(event) => {
-                                                                                 updateCasinoStatus(event.target.checked)
-                                                                             }}
-                                                                             name="gilad"/>}
-                                                            label={casinoLabel}
-                                                        />
-                                                    </FormGroup>
-                                                    <Link href="#" className="Link" onClick={toggleModal}>
-                                                        What's Casino Opt In?
-                                                    </Link>
-                                                </div>
+                                                    <div>
+                                                        <FormGroup>
+                                                            <FormControlLabel
+                                                                control={<Switch checked={casinoChecked}
+                                                                                 onChange={(event) => {
+                                                                                     updateCasinoStatus(event.target.checked)
+                                                                                 }}
+                                                                                 name="gilad"/>}
+                                                                label={casinoLabel}
+                                                            />
+                                                        </FormGroup>
+                                                        <Link href="#" className="Link" onClick={toggleModal}>
+                                                            What's Casino Opt In?
+                                                        </Link>
+                                                    </div>
                                                     :
                                                     <div>
-                                                        <Typography variant="subtitle1" gutterBottom>
-                                                            User Opted in?: {profileData.casinoOptIn ? 'Yes' : 'No'}
-                                                        </Typography>
+                                                        <FormGroup>
+                                                            <FormControlLabel
+                                                                control={<Switch checked={casinoChecked}
+                                                                                 name="gilad"/>}
+                                                                label={casinoLabel}
+                                                                disabled
+                                                            />
+                                                        </FormGroup>
                                                         <Link href="#" className="Link" onClick={toggleModal}>
                                                             What's Casino Opt In?
                                                         </Link>
@@ -175,9 +179,14 @@ function Profile(props) {
                                             </div>
                                             :
                                             <div>
-                                                <Typography variant="subtitle1" gutterBottom>
-                                                    User Opted in?: {profileData.casinoOptIn ? 'Yes' : 'No'}
-                                                </Typography>
+                                                <FormGroup>
+                                                    <FormControlLabel
+                                                        control={<Switch checked={casinoChecked}
+                                                                         name="gilad"/>}
+                                                        label={casinoLabel}
+                                                        disabled
+                                                    />
+                                                </FormGroup>
                                                 <Link href="#" className="Link" onClick={toggleModal}>
                                                     What's Casino Opt In?
                                                 </Link>
@@ -243,6 +252,7 @@ function Profile(props) {
                         :
                         <div>No Profile</div>
                 }
+
 
             </Paper>
             <Dialog

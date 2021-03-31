@@ -1,6 +1,6 @@
-export const lastSeen = (time) => {
+export const lastSeen = (startTime, endTime) => {
     const timeNow = Date.now();
-    const formattedTime = new Date(time)
+    const formattedTime = new Date(endTime)
     let diff = (formattedTime - timeNow)/1000;
     diff = Math.abs(Math.floor(diff));
 
@@ -10,7 +10,16 @@ export const lastSeen = (time) => {
     leftSec = leftSec - hrs * 60*60;
     const min = Math.floor(leftSec/(60));
     leftSec = leftSec - min * 60;
-    return `${days} Days, ${hrs} Hours, ${min} Mins ago`
+
+    if (isNaN(days) || isNaN(hrs) || isNaN(min)) {
+        return 'Never';
+    }
+
+    if(startTime > endTime) {
+        return 'Online Now'
+    }
+
+    return `${days} Days, ${hrs} Hours, ${min} Mins ago`;
 }
 
 export const formatVoiceTime = (time) => {

@@ -1,9 +1,8 @@
-import React, {useContext, useEffect, useState} from "react";
+import React from "react";
 import './home.scss';
-import {Link, Paper, Typography} from "@material-ui/core";
+import { Paper, Typography} from "@material-ui/core";
 import logo from '../../assets/images/logo.svg'
 import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
 
 function Home(props) {
 

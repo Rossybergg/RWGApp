@@ -14,6 +14,10 @@ export const getUserData = (userIds) => {
     })
 }
 
+export const getAllUserData = () => {
+    return axios.get(`${serviceURL}/api/users/profiles`)
+}
+
 export const getAvatars = (userIds) => {
     return axios.post(`${serviceURL}/api/users/avatar`, {
         users: userIds

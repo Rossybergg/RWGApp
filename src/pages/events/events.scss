@@ -9,7 +9,7 @@
   .Calendar{
     position: relative;
     min-height: 600px;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 100%;
     font-family: Roboto;
   }
@@ -23,8 +23,13 @@
     overflow: hidden;
   }
   h1{
+    position: relative;
     color: white;
     font-family: Roboto;
+    margin-bottom: 5px;
+  }
+  .Body2{
+    position: relative;
   }
   .Input{
     position: relative;

@@ -29,7 +29,6 @@ function NewEvent(props) {
     const [dateError, setDateError] = useState(false);
     const [description, setDescription] = useState('');
     const [descriptionError, setDescriptionError] = useState(false);
-    const [pageLoad] = useState(true);
     const notifications = new Notifications();
     const history= useHistory();
 

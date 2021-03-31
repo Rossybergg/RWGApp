@@ -1,0 +1,144 @@
+.Members {
+  position: relative;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+  .Paper {
+    position: relative;
+    padding: 0 30px 10px 30px;;
+    width: 100%;
+    min-height: 700px;
+    max-width: 1000px;
+    height: fit-content;
+    background: #1e1e1e;
+    overflow: hidden;
+  }
+  h1{
+    margin-top: 30px;
+    position: relative;
+    color: white;
+    font-family: Roboto;
+    margin-bottom: 5px;
+  }
+  .MembersContainer{
+    margin-top: 50px;
+    position: relative;
+    padding: 10px 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .UserCard{
+    margin: 15px;
+    padding: 10px;
+    position: relative;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #333333;
+  }
+
+  .ProfileImage {
+    width: 100%;
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    height: auto;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+  }
+
+  .CardTitle{
+    position: relative;
+    margin-top: 100px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .CardContent{
+    position: relative;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+
+  .CardButtonContainer{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .TableUser{
+    position: relative;
+    float: left;
+    width: 200px;
+  }
+
+  .ProfileAvatar{
+    position: relative;
+    width: 30px;
+    height: auto;
+  }
+
+  .TableUserName{
+    position: relative;
+    margin-left: 40px;
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Table{
+    background: #333333;
+  }
+
+  .Input{
+    position: relative;
+    width: 150px;
+    margin: 20px 0;
+    float: right;
+  }
+
+  .online{
+    -webkit-box-shadow:0px 0px 18px 7px rgba(151,28,40,0.9);
+    -moz-box-shadow: 0px 0px 18px 7px rgba(151,28,40,0.9);
+    box-shadow: 0px 0px 18px 7px rgba(151,28,40,0.9);
+  }
+
+  .SortByTitle{
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    color: white;
+    font-family: Roboto;
+    margin-bottom: 5px;
+  }
+  .Text{
+    background-color: #191919;
+  }
+
+  .SortContainer{
+    margin-top: 130px;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background: #2d0061;
+  }
+
+}

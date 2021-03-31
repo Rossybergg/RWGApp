@@ -4,6 +4,27 @@
     width: 100%;
     min-height: 100vh;
 
+    .HeadingBg{
+        position: absolute;
+        height: 200px;
+        left: 0;
+        top: 0;
+        opacity: 0.7;
+        width: 100%;
+        background: rgb(151,28,40);
+        background: linear-gradient(139deg, rgba(151,28,40,1) 0%, rgba(92,40,133,1) 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    }
+
+    .TitleBG{
+        margin-top: 25px;
+        position: relative;
+        color: white;
+        font-family: Roboto;
+        font-size: 40px;
+    }
+
     .Background{
         position: absolute;
         top: 0;

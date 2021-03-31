@@ -14,6 +14,7 @@ import NotFound from "./pages/notFound/NotFound";
 import NewEvent from "./pages/events/NewEvent";
 import EventDetails from "./pages/events/EventDetails";
 import Profile from "./pages/profile/Profile";
+import Members from "./pages/members/Members";
 
 function App() {
     return (
@@ -34,6 +35,7 @@ function App() {
                                 <Route path="/events/:eventId" component={EventDetails}/>
                                 <Route path="/profile/:userId" component={Profile}/>
                                 <Route path="/newevent" component={NewEvent}/>
+                                <Route path="/members" component={Members}/>
                                 <Route path="/401" component={NotAuthorised}/>
                                 <Route component={NotFound}/>
                             </Switch>
