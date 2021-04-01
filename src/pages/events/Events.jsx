@@ -9,6 +9,7 @@ import './calendar.scss'
 import Button from "@material-ui/core/Button";
 import Add from "@material-ui/icons/Add";
 import {getEvents} from "../../services/eventsService";
+import logo from "../../assets/images/logo.svg";
 
 const Events = (props) => {
 
@@ -32,6 +33,9 @@ const Events = (props) => {
                 <h1>Upcoming Events</h1>
                 <Typography className="Body2" variant="body2">Below you'll find all the upcoming events available for members, click an
                     event for more info.</Typography>
+                <div id="logoContainer">
+                    <img src={logo} alt="Red Wine Gaming" id="logo"/>
+                </div>
                 <div id="buttonContainer">
                     {
                         userProfile && userProfile.staff

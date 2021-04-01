@@ -19,6 +19,18 @@ export const lastSeen = (startTime, endTime) => {
         return 'Online Now'
     }
 
+    if (days !== 0) {
+        return `${days} Days Ago`;
+    }
+
+    if (days === 0 && hrs !== 0) {
+        return `${hrs} Hours Ago`;
+    }
+
+    if (days === 0 & hrs === 0 & min !== 0) {
+        return `${min} Minutes Ago`;
+    }
+
     return `${days} Days, ${hrs} Hours, ${min} Mins ago`;
 }
 

@@ -29,8 +29,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 65%;
+        height: 800px;
         width: 100%;
+        overflow: hidden;
         overflow: hidden;
     }
 
@@ -42,7 +43,7 @@
         filter: saturate(200%);
         opacity: 0.6;
         background: linear-gradient(-45deg,  #2d0061, #620000, #8f4fc1, #971c28);
-        animation: gradient 15s infinite;
+        animation: gradient 7s infinite;
     }
 
     @keyframes gradient {
@@ -74,7 +75,7 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        bottom: 0;
+        top: 0;
         left: 0;
         background: linear-gradient(0deg, rgba(25,25,25,1) 17%, rgba(0,0,0,0) 75%);
     }

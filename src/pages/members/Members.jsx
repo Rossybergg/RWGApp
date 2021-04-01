@@ -17,6 +17,7 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import logo from '../../assets/images/logo.svg';
 
 
 
@@ -101,6 +102,9 @@ const Members = () => {
                 <div className="TitleContainer">
                     <div className="HeadingBg"/>
                     <h1>Members</h1>
+                    <div id="logoContainer">
+                        <img src={logo} alt="Red Wine Gaming" id="logo"/>
+                    </div>
                 </div>
                 <div className="SortContainer">
                     <div className="SortByTitle">
@@ -128,9 +132,9 @@ const Members = () => {
                             <TableRow>
                                 <TableCell>Member</TableCell>
                                 <TableCell align="right">Gems 💎</TableCell>
-                                <TableCell align="right">Voice Time</TableCell>
+                                <TableCell align="right">Voice Time (Minutes)</TableCell>
                                 <TableCell align="right">Messages</TableCell>
-                                <TableCell align="right">Steals</TableCell>
+                                <TableCell align="right">Successful Steals</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
