@@ -7,6 +7,7 @@
   align-items: center;
   margin-bottom: 50px;
 
+
   .Paper {
     position: relative;
     padding: 0 30px 10px 30px;;
@@ -28,6 +29,19 @@
     height: 400px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    filter: grayscale(100%) blur(5px);
+  }
+
+  .ProfileMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    mix-blend-mode: overlay;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    background: linear-gradient(139deg, rgba(151,28,40,1) 0%, rgba(92,40,133,1) 100%);
   }
 
   h4 {
@@ -55,23 +69,25 @@
   }
 
   .TitleContainer {
-    margin-top: 300px;
-    height: 50px;
+    margin: 300px 0 20px 0;
+    height: fit-content;
     width: 100%;
-    display: flex;
   }
 
   .StatsContainer {
     position: relative;
     width: 100%;
     height: fit-content;
+    padding-top: 10px;
     margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
   }
 
   .Input {
     position: relative;
-    margin: 20px 20px 0 0;
     background-color: #191919;
+    margin: 10px;
   }
 
   .SubTitleContainer {

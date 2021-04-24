@@ -19,6 +19,7 @@ import {getUserData, changeCasinoStatus} from '../../services/userService';
 import {lastSeen, formatVoiceTime, getKD} from './timeTransformer';
 import {UserContext} from '../../store/Store';
 import Notifications from '../../components/Notifications/Notifications';
+import logo from "../../assets/images/logo.svg";
 
 const notifications = new Notifications();
 
@@ -116,9 +117,10 @@ function Profile(props) {
                 {
                     profileData ?
                         <div>
-                            <div>
+                            <div className="HeaderContainer">
                                 <img className="ProfileImage" alt={''}
                                      src={`https://cdn.discordapp.com/avatars/${profileData._id}/${profileData.avatar}`}/>
+                                <div className="ProfileMask"/>
                             </div>
                             <div className="ProfileContainer">
                                 <Avatar className="ProfileAvatar" alt={''}
@@ -126,17 +128,18 @@ function Profile(props) {
                             </div>
                             <div className="TitleContainer">
                                 <Typography variant="h4">{profileData.userName}</Typography>
+                                <div className="SubTitleContainer">
+                                    <Typography variant="subtitle1" gutterBottom>
+                                        Level: {profileData.level} XP: {profileData.xp}
+                                    </Typography>
+                                </div>
+                                <div className="SubTitleContainer">
+                                    <Typography variant="subtitle1" gutterBottom>
+                                        Last Seen: {lastSeen(profileData.voiceStartTime, profileData.voiceEndTime)}
+                                    </Typography>
+                                </div>
                             </div>
-                            <div className="SubTitleContainer">
-                                <Typography variant="subtitle1" gutterBottom>
-                                    Level: {profileData.level} XP: {profileData.xp}
-                                </Typography>
-                            </div>
-                            <div className="SubTitleContainer">
-                                <Typography variant="subtitle1" gutterBottom>
-                                    Last Seen: {lastSeen(profileData.voiceStartTime, profileData.voiceEndTime)}
-                                </Typography>
-                            </div>
+
                             <div className="SubContainer">
                                 <Typography variant="h5">Casino Games</Typography>
                             </div>
