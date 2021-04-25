@@ -61,6 +61,13 @@
     width: 1050px;
     opacity: 0.1;
   }
+
+  .ThumbnailImage{
+    position: relative;
+    height: 200px !important;
+    width: 200px !important;
+    border: solid 3px white;
+  }
 }
 #swal2-content {
   color: white !important;
@@ -70,11 +77,4 @@
 #swal2-title {
   color: white !important;
   font-family: Roboto, serif;
-}
-
-.ThumbnailImage{
-  position: relative;
-  height: 200px !important;
-  width: 200px !important;
-  border: solid 3px white;
 }

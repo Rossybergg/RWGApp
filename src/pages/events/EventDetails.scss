@@ -50,9 +50,13 @@
     align-items: center;
   }
   .Creator{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     border: 3px solid white;
+    box-shadow:
+            0 0 25px black,
+            -5px 0 25px rgba(151,28,40,1),
+            5px 0 25px rgba(92,40,133,1);
     :hover{
       cursor: pointer;
     }
@@ -66,9 +70,12 @@
 
     .AvatarContainer{
       position: relative;
-      display: inline-block;
-      grid-template-columns: 20% 20%;
-      width: fit-content;
+      display: grid;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+      width: 100%;
       height: fit-content;
       overflow: hidden;
       text-align: center;
@@ -76,12 +83,12 @@
         float: left;
         position: relative;
         margin: 10px;
-
       }
       .User{
-        height: 70px;
-        width: 70px;
+        height: 85px;
+        width: 85px;
         border: 3px solid white;
+        margin: 0 20px 0 20px;
         :hover{
           cursor: pointer;
         }
@@ -129,6 +136,14 @@
     height: 200px;
     width: 200px;
     border: solid 3px white;
+  }
+
+  .User:hover, .Creator:hover{
+    cursor: pointer;
+    box-shadow:
+            0 0 10px black,
+            -5px 0 15px rgb(151,28,40),
+            5px 0 15px rgba(92,40,133,1);
   }
 }
 #swal2-content {

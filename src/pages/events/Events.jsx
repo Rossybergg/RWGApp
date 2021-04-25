@@ -31,8 +31,7 @@ const Events = (props) => {
             <Paper className="Paper">
                 <div className="HeadingBg"/>
                 <h1>Upcoming Events</h1>
-                <Typography className="Body2" variant="body2">Below you'll find all the upcoming events click an
-                    event for more info.</Typography>
+                <Typography className="Body2" variant="body2">Click an event for more info.</Typography>
                 <div id="logoContainer">
                     <img src={logo} alt="Red Wine Gaming" id="logo"/>
                 </div>
