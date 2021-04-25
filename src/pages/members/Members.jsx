@@ -82,7 +82,7 @@ const Members = () => {
                             }
                             <Typography className="CardContent" variant="body2">{`Last Seen: ${lastSeen(user.voiceStartTime, user.voiceEndTime)}`}</Typography>
                             <div className="CardButtonContainer">
-                                <Button variant="outlined" onClick={() => window.location.href =`https://app.redwinegaming.com/profile/${user._id}`} color="secondary"
+                                <Button variant="outlined" color="secondary"  onClick={() => window.location.href =`https://app.redwinegaming.com/profile/${user._id}`}
                                         startIcon={<PersonOutlineIcon/>}>
                                     View Profile
                                 </Button>

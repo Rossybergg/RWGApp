@@ -19,7 +19,7 @@
     overflow: hidden;
   }
   h4{
-    margin-top: 150px;
+    margin-top: 350px;
     position: relative;
     color: white;
     font-family: Roboto;
@@ -88,21 +88,47 @@
       }
     }
   }
-  .EventImage{
+  .EventImage {
     width: 100%;
-    opacity: 0.25;
     position: absolute;
+    opacity: 0.3;
     top: 0;
     left: 0;
     z-index: 0;
+    overflow: hidden;
+    height: 400px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    filter: grayscale(100%) blur(5px);
   }
-  .EventMask{
-    background: linear-gradient(0deg, #1e1e1e 25%, rgba(0,0,0,0) 100%);
-    width: 100%;
-    height: 500px;
+
+  .EventMask {
     position: absolute;
     top: 0;
     left: 0;
+    height: 400px;
+    width: 100%;
+    mix-blend-mode: overlay;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    background: linear-gradient(139deg, rgba(151,28,40,1) 0%, rgba(92,40,133,1) 100%);
+  }
+  .EventContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .EventAvatar {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border: solid 3px white;
   }
 }
 #swal2-content {

@@ -10,10 +10,18 @@ import TextField from "@material-ui/core/TextField";
 import {KeyboardDateTimePicker} from "@material-ui/pickers";
 import Button from "@material-ui/core/Button";
 import SaveIcon from '@material-ui/icons/Save';
+import VisibilityIcon from '@material-ui/icons/Visibility'
 import NotAuthorised from "../notAuthorised/NotAuthorised";
 import {publishEvent} from "../../services/eventsService";
 import Notifications from "../../components/Notifications/Notifications";
 import { useHistory } from 'react-router-dom'
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions";
+import Dialog from "@material-ui/core/Dialog";
+import Avatar from "@material-ui/core/Avatar";
+import logo from "../../assets/images/logo.svg";
 
 
 function NewEvent(props) {
@@ -28,9 +36,24 @@ function NewEvent(props) {
     const [endDate, setEndDate] = useState(new Date());
     const [dateError, setDateError] = useState(false);
     const [description, setDescription] = useState('');
+    const [thumbnailType, setThumbnailType] = useState('');
+    const [thumbnailTypeError, setThumbnailTypeError] = useState(false);
+    const [thumbnailUrl, setThumbnailTUrl] = useState('');
+    const [thumbnailUrlError, setThumbnailTUrlError] = useState(false);
+    const [thumbnailUrlErrorMsg, setThumbnailTUrlErrorMsg] = useState('');
     const [descriptionError, setDescriptionError] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     const notifications = new Notifications();
     const history= useHistory();
+    const URLREGEX = new RegExp(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/);
+
+    const toggleModal = () => {
+        if (openModal) {
+            setOpenModal(false);
+        } else {
+            setOpenModal(true);
+        }
+    }
 
     const checkForm = () => {
         let foundError = false
@@ -52,6 +75,10 @@ function NewEvent(props) {
             foundError = true
         }
 
+        if (event === 'GAME' && thumbnailType === '') {
+            setThumbnailTypeError(true);
+        }
+
         if (description === '') {
             setDescriptionError(true)
             foundError = true;
@@ -67,12 +94,46 @@ function NewEvent(props) {
             foundError = true
         }
 
+        if(thumbnailType === 'CUSTOM' && !checkURL(thumbnailUrl)){
+            setThumbnailTUrlError(true);
+            setThumbnailTUrlErrorMsg('Not A Valid URL')
+            return;
+        }
+
+        if(thumbnailUrl !== '' && thumbnailUrl.slice(0,4) !== 'http'){
+            setThumbnailTUrlError(true);
+            setThumbnailTUrlErrorMsg('URL must start with \'http\' / \'https\' ')
+            return;
+        }
+
+        if(thumbnailUrl.length > 2048) {
+            setThumbnailTUrlError(true);
+            setThumbnailTUrlErrorMsg('Thumbnail URL too long, Max 2048 characters')
+            return;
+        }
+
         if (foundError) {
             return;
         }
 
         submitEvent()
+    }
 
+    const checkURL = (url) => {
+        return URLREGEX.test(url);
+    }
+
+    const checkThumbnail = () => {
+
+        if(checkURL(thumbnailUrl)){
+            console.log(thumbnailUrl.length)
+            toggleModal()
+            setThumbnailTUrlErrorMsg('');
+            setThumbnailTUrlError(false);
+        } else {
+            setThumbnailTUrlError(true);
+            setThumbnailTUrlErrorMsg('Not A Valid URL');
+        }
     }
 
     const submitEvent = () => {
@@ -80,6 +141,8 @@ function NewEvent(props) {
             title,
             event,
             game,
+            thumbnailType,
+            thumbnailUrl,
             startDate,
             endDate,
             description
@@ -105,6 +168,9 @@ function NewEvent(props) {
         setDateError(false)
         setStartDate(new Date())
         setEndDate(new Date())
+        setThumbnailTUrlError(false)
+        setThumbnailTUrlErrorMsg('')
+        setThumbnailTUrl('')
     }
 
 
@@ -114,7 +180,11 @@ function NewEvent(props) {
             {
                 userProfile && userProfile.staff ?
                     <Paper className="Paper">
-                        <h1>Create New Event</h1>
+                        <div className="HeadingBg"/>
+                        <h1 id="TitleText">Create New Event</h1>
+                        <div id="logoContainer">
+                            <img src={logo} alt="Red Wine Gaming" id="logo"/>
+                        </div>
                         <div>
                             <TextField className="Input Text"
                                        variant="filled"
@@ -144,23 +214,49 @@ function NewEvent(props) {
                         </div>
                         {event === 'GAME' ?
                             <div>
+                                <TextField className="Input Text"
+                                           variant="filled"
+                                           label="Game Title"
+                                           error={gameError}
+                                           value={game}
+                                           onChange={(event) => {
+                                               setGame(event.target.value)
+                                           }}
+                                />
                                 <FormControl className="Input Text" variant="filled">
-                                    <InputLabel>Game</InputLabel>
+                                    <InputLabel>Event Thumbnail</InputLabel>
                                     <Select
-                                        label="Game"
-                                        value={game}
-                                        error={gameError}
+                                        label="Event Type"
+                                        value={thumbnailType}
+                                        error={thumbnailTypeError}
                                         onChange={(event) => {
-                                            setGame(event.target.value)
+                                            setThumbnailType(event.target.value)
                                         }}
                                     >
-                                        <MenuItem value={'AMONGUS'}>Among Us</MenuItem>
-                                        <MenuItem value={'DESTINY2'}>Destiny 2</MenuItem>
-                                        <MenuItem value={'QUIZ'}>Quiz</MenuItem>
-                                        <MenuItem value={'GOLF'}>Golf With Your Friends</MenuItem>
-                                        <MenuItem value={'TABLETOP'}>Tabletop Simulator</MenuItem>
+                                        <MenuItem value={'DEFAULT'}>Default</MenuItem>
+                                        <MenuItem value={'CUSTOM'}>Custom</MenuItem>
                                     </Select>
                                 </FormControl>
+                                {thumbnailType === 'CUSTOM' ?
+                                    <div>
+                                    <TextField className="Input Text"
+                                               variant="filled"
+                                               label="Custom Thumbnail URL"
+                                               error={thumbnailUrlError}
+                                               helperText={thumbnailUrlErrorMsg}
+                                               value={thumbnailUrl}
+                                               onChange={(event) => {
+                                                   setThumbnailTUrl(event.target.value)
+                                               }}
+                                    />
+                                        <div id="buttonContainer">
+                                            <Button variant="contained" onClick={checkThumbnail} color="secondary" startIcon={<VisibilityIcon/>}>
+                                                Preview Thumbnail
+                                            </Button>
+                                        </div>
+                                    </div>
+                                    : null
+                                }
                             </div>
                             : null
                         }
@@ -222,13 +318,30 @@ function NewEvent(props) {
                             />
                         </div>
                         <div id="buttonContainer">
-                            <Button variant="contained" onClick={checkForm} color="primary" startIcon={<SaveIcon/>}>
+                            <Button variant="contained" onClick={checkForm} color="secondary" startIcon={<SaveIcon/>}>
                                 Save Event
                             </Button>
                         </div>
                     </Paper>
                     : <NotAuthorised/>
             }
+            <Dialog
+                open={openModal}
+                onClose={() => {
+                }}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogContent>
+                    <Avatar className="ThumbnailImage" alt={''}
+                            src={thumbnailUrl}/>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={toggleModal} color="secondary" autoFocus>
+                        CLOSE
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     )
 }

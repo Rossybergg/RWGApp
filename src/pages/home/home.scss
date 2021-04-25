@@ -8,6 +8,14 @@
   margin-bottom: 50px;
   color: white;
 
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
   .Paper{
     position: relative;
     padding: 50px 20px 30px 20px;
@@ -19,6 +27,7 @@
   }
 
   #logoContainer {
+    margin-top: 230px;
     position: relative;
     display: flex;
     width: 100%;
@@ -31,6 +40,8 @@
     position: relative;
     height: auto;
     width: 100%;
+    z-index: 10;
+    filter: drop-shadow(10px 5px 4px rgba(0,0,0,0.5));
   }
 
   .BannerContainer{

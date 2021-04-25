@@ -10,11 +10,12 @@
     position: relative;
     padding: 0 30px ;
     width: 100%;
-    max-width: 600px;
+    max-width: 1000px;
     height: fit-content;
     background: #1e1e1e;
   }
   h1{
+    position: relative;
     color: white;
     font-family: Roboto;
   }
@@ -37,6 +38,29 @@
     position: relative;
     float: right;
   }
+
+  #TitleText{
+    margin-bottom: 150px;
+  }
+  #logoContainer{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+  }
+
+  #logo{
+    position: absolute;
+    top: -100px;
+    right: -200px;
+    height: 400px;
+    width: 1050px;
+    opacity: 0.1;
+  }
 }
 #swal2-content {
   color: white !important;
@@ -46,4 +70,11 @@
 #swal2-title {
   color: white !important;
   font-family: Roboto, serif;
+}
+
+.ThumbnailImage{
+  position: relative;
+  height: 200px !important;
+  width: 200px !important;
+  border: solid 3px white;
 }

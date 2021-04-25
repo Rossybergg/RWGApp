@@ -6,12 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import moment from 'moment';
 import {getAvatars} from "../../services/userService";
 import Avatar from "@material-ui/core/Avatar";
-import amongus from '../../assets/images/games/amongus.png'
-import destiny2 from '../../assets/images/games/destiny2.png'
-import quiztime from '../../assets/images/games/quiztime.jpg'
-import golf from '../../assets/images/games/golf.jpg'
-import logo from '../../assets/images/logo.svg'
-import tabletop from '../../assets/images/games/tabletop.jpg'
+import defaultImage from '../../assets/images/defaultUser.jpg'
 import {UserContext} from "../../store/Store";
 import Button from "@material-ui/core/Button";
 import PersonAdd from "@material-ui/icons/PersonAdd";
@@ -47,33 +42,10 @@ const EventDetails = (props) => {
     useEffect(() => {
     }, [addedUsers])
 
-    const getImage = (game) => {
-        let image;
-
-        switch(game){
-            case 'Among Us':
-                image = amongus;
-                break;
-            case 'Destiny 2':
-                image = destiny2;
-                break;
-            case 'Quiz':
-                image = quiztime;
-                break;
-            case 'Golf With Your Friends':
-                image = golf;
-                break;
-            case 'Tabletop Simulator':
-                image = tabletop;
-                break;
-            default:
-                image = logo;
-                break;
-        }
-
+    const getImage = (url) => {
         return(
             <div>
-                <img className="EventImage" alt={game} src={image}/>
+                <img className="EventImage" alt={'game'} src={url}/>
                 <div className="EventMask"/>
             </div>
 
@@ -105,8 +77,17 @@ const EventDetails = (props) => {
             <Paper className="Paper">
                 {
                     event && event.game
-                    ?
-                        getImage(event.game)
+                    ?  <div>
+                            <div className="EventContainer">
+                                <img className="EventImage" alt={''}
+                                     src={event.thumbnailUrl ? event.thumbnailUrl : defaultImage}/>
+                                <div className="EventMask"/>
+                            </div>
+                            <div className="EventContainer">
+                                <Avatar className="EventAvatar" alt={''}
+                                        src={event.thumbnailUrl ? event.thumbnailUrl : defaultImage}/>
+                            </div>
+                        </div>
                         :
                         null
                 }
@@ -206,7 +187,7 @@ const EventDetails = (props) => {
                                  creator
                                     ?
                                     <div id="buttonContainer">
-                                        <Button variant="contained" onClick={() => userSignUp()} color="primary" startIcon={<PersonAdd/>}>
+                                        <Button variant="contained" onClick={() => userSignUp()} color="secondary" startIcon={<PersonAdd/>}>
                                             Sign Up
                                         </Button>
                                     </div>

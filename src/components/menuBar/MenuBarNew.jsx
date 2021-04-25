@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 import { UserContext } from '../../store/Store';
 import Avatar from '@material-ui/core/Avatar';
 import {getUser} from '../../services/userService';
-import {serviceURL, appURL} from '../../constants/serviceURLS';
-import Notifications from '../Notifications/Notifications';
+import {serviceURL} from '../../constants/serviceURLS';
 
 
 function MenubarNew() {
@@ -18,7 +17,6 @@ function MenubarNew() {
     let navbarToggle;
     let navbarMenu;
     let navbarLinksContainer;
-    const notifications = new Notifications();
 
     useEffect( () => {
         if (!userProfile){
