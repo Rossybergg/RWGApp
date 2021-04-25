@@ -39,7 +39,7 @@ function Home(props) {
                 </div>
                 <Typography variant="body1">Welcome to Red Wine Gaming</Typography>
                     <Typography variant="body2">Our site is still a little far off but you can come and join us on discord!</Typography>
-                <video autoPlay muted loop className="video" id="video">
+                <video autoPlay muted loop playsInline className="video" id="video">
                     <source src="https://drive.google.com/uc?export=download&id=1rAD7EnLbp6-Zc9HQWaIOpgPDzi_OioGL" type='video/mp4'/>
                 </video>
                 <div className="ButtonContainer">
