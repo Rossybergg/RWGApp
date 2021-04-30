@@ -159,6 +159,7 @@ const EventDetails = (props) => {
                                                             <div className="Avatar">
                                                                 <Avatar alt={user.userName}
                                                                         className="User"
+                                                                        title={user.userName}
                                                                         src={user.avatar ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}` : defaultImage}
                                                                         onClick={() => {window.location.href = `https://app.redwinegaming.com/profile/${user.id}`}}
                                                                 />
