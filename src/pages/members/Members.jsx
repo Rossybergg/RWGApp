@@ -73,7 +73,7 @@ const Members = () => {
                         <Paper className={`UserCard ${user.voiceStartTime > user.voiceEndTime ? 'online' : null}`} elevation={3}>
                             <img className="ProfileImage" alt={''}
                                  src={userPic}/>
-                            <Typography className="CardTitle" variant="body2">{user.userName}</Typography>
+                            <Typography className="UserCardTitle" variant="body2">{user.userName}</Typography>
                             {
                                 user.staff ?
                                     <Typography className="CardContent" variant="body2">Admin</Typography>

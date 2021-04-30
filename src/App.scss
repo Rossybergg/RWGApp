@@ -61,16 +61,6 @@
         }
     }
 
-    #swal2-content {
-        color: white !important;
-        font-family: Roboto, serif;
-    }
-
-    #swal2-title {
-        color: white !important;
-        font-family: Roboto, serif;
-    }
-
     .Mask{
         position: absolute;
         height: 100%;
@@ -114,4 +104,13 @@
     background: #2c2f33;
     border-radius: 10px;
     -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+#swal2-content {
+    color: white !important;
+    font-family: Roboto, serif;
+}
+
+#swal2-title {
+    color: white !important;
+    font-family: Roboto, serif;
 }
