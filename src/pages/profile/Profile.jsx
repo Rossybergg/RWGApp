@@ -19,7 +19,7 @@ import {getUserData, changeCasinoStatus} from '../../services/userService';
 import {lastSeen, formatVoiceTime, getKD} from './timeTransformer';
 import {UserContext} from '../../store/Store';
 import Notifications from '../../components/Notifications/Notifications';
-import logo from "../../assets/images/logo.svg";
+import defaultImage from '../../assets/images/defaultUser.jpg'
 
 const notifications = new Notifications();
 
@@ -119,12 +119,12 @@ function Profile(props) {
                         <div>
                             <div className="HeaderContainer">
                                 <img className="ProfileImage" alt={''}
-                                     src={`https://cdn.discordapp.com/avatars/${profileData._id}/${profileData.avatar}`}/>
+                                     src={profileData.avatar ? `https://cdn.discordapp.com/avatars/${profileData._id}/${profileData.avatar}` : defaultImage}/>
                                 <div className="ProfileMask"/>
                             </div>
                             <div className="ProfileContainer">
                                 <Avatar className="ProfileAvatar" alt={''}
-                                        src={`https://cdn.discordapp.com/avatars/${profileData._id}/${profileData.avatar}`}/>
+                                        src={profileData.avatar ? `https://cdn.discordapp.com/avatars/${profileData._id}/${profileData.avatar}` : defaultImage}/>
                             </div>
                             <div className="TitleContainer">
                                 <Typography variant="h4">{profileData.userName}</Typography>

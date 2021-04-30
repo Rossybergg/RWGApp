@@ -155,25 +155,15 @@ const EventDetails = (props) => {
                                         <div className="Center">
                                             <div className="AvatarContainer">
                                                 {addedUsers.map((user) => {
-                                                    if (user.avatar) {
                                                         return (
                                                             <div className="Avatar">
                                                                 <Avatar alt={user.userName}
                                                                         className="User"
-                                                                        src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}`}
+                                                                        src={user.avatar ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar.toString()}` : defaultImage}
                                                                         onClick={() => {window.location.href = `https://app.redwinegaming.com/profile/${user.id}`}}
                                                                 />
                                                             </div>
                                                         )
-                                                    } else {
-                                                        return (
-                                                            <div className="Avatar">
-                                                                <Avatar alt={user.userName}
-                                                                        onClick={() => {window.location.href = `https://app.redwinegaming.com/profile/${user.id}`}}
-                                                                        className="User">{user.userName.charAt(0)}</Avatar>
-                                                            </div>
-                                                        )
-                                                    }
                                                 })}
                                             </div>
                                         </div>
