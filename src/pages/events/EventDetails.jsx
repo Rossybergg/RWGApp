@@ -52,7 +52,7 @@ const EventDetails = (props) => {
                 if (result.data.status === 'SUCCESS') {
                     notifications.sendToast('success', 6000, 'Success', `You are now signed up for this event`)
                 } else {
-                    notifications.sendToast('info', 6000, 'Info', `You are already signed up to this event 😒`)
+                    notifications.sendToast('info', 6000, 'Info', result.data.msg)
                 }
                 setSignedUp(true);
             })
