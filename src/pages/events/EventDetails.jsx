@@ -40,20 +40,6 @@ const EventDetails = (props) => {
         }
     }, [event])
 
-    useEffect(() => {
-    }, [addedUsers])
-
-    const getImage = (url) => {
-        return(
-            <div>
-                <img className="EventImage" alt={'game'} src={url}/>
-                <div className="EventMask"/>
-            </div>
-
-        )
-
-    }
-
     const userSignUp = () => {
 
         if(!userProfile || !userProfile._id){
@@ -66,7 +52,7 @@ const EventDetails = (props) => {
                 if (result.data.status === 'SUCCESS') {
                     notifications.sendToast('success', 6000, 'Success', `You are now signed up for this event`)
                 } else {
-                    notifications.sendToast('info', 99999, 'Info', `You are already signed up to this event 😒`)
+                    notifications.sendToast('info', 6000, 'Info', `You are already signed up to this event 😒`)
                 }
                 setSignedUp(true);
             })

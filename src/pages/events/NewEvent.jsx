@@ -98,6 +98,10 @@ function NewEvent(props) {
             return;
         }
 
+        if(thumbnailType === 'DEFAULT' && thumbnailUrl.length > 0){
+            setThumbnailTUrl('')
+        }
+
         if(thumbnailUrl !== '' && thumbnailUrl.slice(0,4) !== 'http'){
             setThumbnailTUrlError(true);
             setThumbnailTUrlErrorMsg('URL must start with \'http\' / \'https\' ')
