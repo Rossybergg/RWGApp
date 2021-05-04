@@ -1,4 +1,4 @@
-.NewEvents{
+.NewEvents {
   position: relative;
   padding-top: 20px;
   width: 100%;
@@ -6,43 +6,50 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  .Paper{
+
+  .Paper {
     position: relative;
-    padding: 0 30px ;
+    padding: 0 30px;
     width: 100%;
     max-width: 1000px;
     height: fit-content;
     background: #1e1e1e;
   }
-  h1{
+
+  h1 {
     position: relative;
     color: white;
     font-family: Roboto;
   }
-  .Input{
+
+  .Input {
     position: relative;
     width: 100%;
     margin: 20px 0;
   }
-  .Text{
+
+  .Text {
     background-color: #191919;
   }
-  #buttonContainer{
+
+  #buttonContainer {
     padding-top: 20px;
     position: relative;
     margin-bottom: 30px;
     width: 100%;
     height: 55px;
   }
-  Button{
+
+  Button {
     position: relative;
     float: right;
   }
 
-  #TitleText{
+  #TitleText {
     margin-bottom: 150px;
   }
-  #logoContainer{
+
+  #logoContainer {
     top: 0;
     left: 0;
     position: absolute;
@@ -53,7 +60,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
   }
 
-  #logo{
+  #logo {
     position: absolute;
     top: -100px;
     right: -200px;
@@ -61,11 +68,10 @@
     width: 1050px;
     opacity: 0.1;
   }
-
-  .ThumbnailImage{
-    position: relative;
-    height: 200px !important;
-    width: 200px !important;
-    border: solid 3px white;
-  }
+}
+.ThumbnailImage {
+  position: relative;
+  height: 200px !important;
+  width: 200px !important;
+  border: solid 3px white;
 }

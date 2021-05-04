@@ -11,6 +11,7 @@ import {UserContext} from "../../store/Store";
 import Button from "@material-ui/core/Button";
 import PersonAdd from "@material-ui/icons/PersonAdd";
 import Notifications from '../../components/Notifications/Notifications';
+import MetaTags from 'react-meta-tags';
 const notifications = new Notifications();
 
 const EventDetails = (props) => {
@@ -65,7 +66,7 @@ const EventDetails = (props) => {
                 if (result.data.status === 'SUCCESS') {
                     notifications.sendToast('success', 6000, 'Success', `You are now signed up for this event`)
                 } else {
-                    notifications.sendToast('info', 6000, 'Info', `You are already signed up to this event 😒`)
+                    notifications.sendToast('info', 99999, 'Info', `You are already signed up to this event 😒`)
                 }
                 setSignedUp(true);
             })
@@ -74,6 +75,12 @@ const EventDetails = (props) => {
 
     return (
         <div className="EventDetails">
+            <MetaTags>
+                <title>[RWG] Event: {event.subtitle}</title>
+                <meta name="description" content={event.description} />
+                <meta property="og:title" content={`[RWG] Event: ${event.subtitle}`} />
+                <meta property="og:image" content={event.thumbnailUrl ? event.thumbnailUrl : defaultImage} />
+            </MetaTags>
             <Paper className="Paper">
                 {
                     event && event.game

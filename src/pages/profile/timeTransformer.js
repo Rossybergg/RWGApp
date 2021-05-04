@@ -20,18 +20,18 @@ export const lastSeen = (startTime, endTime) => {
     }
 
     if (days !== 0) {
-        return `${days} Days Ago`;
+        return `${days} ${days === 1 ? 'Day' : 'Days'} Ago`;
     }
 
     if (days === 0 && hrs !== 0) {
-        return `${hrs} Hours Ago`;
+        return `${hrs} ${hrs === 1 ? 'Hour' : 'Hours'} Ago`;
     }
 
-    if (days === 0 & hrs === 0 & min !== 0) {
-        return `${min} Minutes Ago`;
+    if (days === 0 && hrs === 0 && min !== 0) {
+        return `${min} ${min === 1 ? 'Minute' : 'Minutes'} Ago`;
     }
 
-    return `${days} Days, ${hrs} Hours, ${min} Mins ago`;
+    return `Moments Ago`;
 }
 
 export const formatVoiceTime = (time) => {
