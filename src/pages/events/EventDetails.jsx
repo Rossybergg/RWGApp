@@ -63,9 +63,6 @@ const EventDetails = (props) => {
         <div className="EventDetails">
             <MetaTags>
                 <title>[RWG] Event: {event.subtitle}</title>
-                <meta name="description" content={event.description} />
-                <meta property="og:title" content={`[RWG] Event: ${event.subtitle}`} />
-                <meta property="og:image" content={event.thumbnailUrl ? event.thumbnailUrl : defaultImage} />
             </MetaTags>
             <Paper className="Paper">
                 {
