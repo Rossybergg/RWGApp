@@ -75,6 +75,7 @@ function MenubarNew() {
                         <ul className="navbar-links">
                             <li className="navbar-item"><Link className="navbar-link" to="/">Home</Link></li>
                             <li className="navbar-item"><Link className="navbar-link" to="/events">Events</Link></li>
+                            <li className="navbar-item"><Link className="navbar-link" to="/quiz">Quiz</Link></li>
                             <li className="navbar-item"><Link className="navbar-link" to="/members">Members</Link></li>
                             {
                                 !userProfile ?

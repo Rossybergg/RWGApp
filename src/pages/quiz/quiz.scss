@@ -1,0 +1,52 @@
+.Quiz {
+  position: relative;
+  padding-top: 20px;
+  width: 100%;
+  margin-bottom: 50px;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  grid-template-columns: 80% 20%;
+
+  .paper-quiz{
+    position: relative;
+    padding: 0 0 50px 0; ;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 700px;
+    height: fit-content;
+    overflow: hidden;
+    background: #1e1e1e;
+    .PaperContents {
+      padding: 20px 30px 0 30px;
+    }
+  }
+
+  .chat-container{
+    position: relative;
+    min-height: 700px;
+  }
+
+  .QuizBg {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .centerButton {
+    width: 100%;
+    margin: 20px 0 20px 0;
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4{
+    position: relative;
+    color: white;
+    font-family: Roboto;
+    margin-bottom: 5px;
+  }
+}

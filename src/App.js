@@ -15,6 +15,7 @@ import NewEvent from "./pages/events/NewEvent";
 import EventDetails from "./pages/events/EventDetails";
 import Profile from "./pages/profile/Profile";
 import Members from "./pages/members/Members";
+import Quiz from "./pages/quiz/Quiz";
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                                 <Route path="/newevent" component={NewEvent}/>
                                 <Route path="/members" component={Members}/>
                                 <Route path="/401" component={NotAuthorised}/>
+                                <Route path="/quiz" component={Quiz}/>
                                 <Route component={NotFound}/>
                             </Switch>
                         </Router>
