@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "FoughtKnight";
+  src: url("../../assets/fonts/foughtknight2.eot");
+  src: url("../../assets/fonts/foughtknight2.eot?#iefix") format("embedded-opentype"),
+  url("../../assets/fonts/foughtknight2.woff2") format('woff2'),
+  url("../../assets/fonts/foughtknight2.woff") format('woff'),
+  url("../../assets/fonts/foughtknight.ttf") format('truetype'),
+  url("../../assets/fonts/foughtknight2.svg#FoughtKnight") format('svg');
+}
+
 .Quiz {
   position: relative;
   padding-top: 20px;
@@ -7,6 +17,7 @@
   grid-column-gap: 10px;
   grid-row-gap: 20px;
   grid-template-columns: 80% 20%;
+  font-family: Roboto;
 
   .paper-quiz{
     position: relative;
