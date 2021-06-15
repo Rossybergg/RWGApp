@@ -3,6 +3,8 @@ import './chat.scss'
 import Avatar from '@material-ui/core/Avatar';
 import defaultImage from '../../assets/images/defaultUser.jpg';
 import hangoutChatHeaderImage from '../../assets/images/hangout.jpg'
+import SendIcon from '@material-ui/icons/Send';
+import Button from "@material-ui/core/Button";
 
 
 const Chat = (props) => {
@@ -71,12 +73,15 @@ const Chat = (props) => {
                 {props.messages.map((message) => formatMessages(message))}
             </div>
             <div className="compose">
-                <div className="send-title">
-                    Send Message
-                </div>
                 <div className="send-box">
-                  Add Message....
+                  Send Message....
                 </div>
+                <Button className="send-button"
+                        variant="contained"
+                        color="secondary"
+                        startIcon={<SendIcon/>}>
+                    Send
+                </Button>
             </div>
         </div>
     )
