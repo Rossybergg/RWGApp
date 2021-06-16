@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './chat.scss'
 import Avatar from '@material-ui/core/Avatar';
 import defaultImage from '../../assets/images/defaultUser.jpg';
@@ -6,12 +6,19 @@ import hangoutChatHeaderImage from '../../assets/images/hangout.jpg'
 import SendIcon from '@material-ui/icons/Send';
 import Button from "@material-ui/core/Button";
 
-
 const Chat = (props) => {
 
     const me = '500376050103222273';
 
     const formatMessages = (message) => {
+
+        if (message.system) {
+            return(
+                <div className="system-message">
+                    <div className="content">{message.message}</div>
+                </div>
+                )
+        }
 
         if (message.userId !== me) {
             return(
